@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link src="../E/" />
+	<style>
+		html,
+		body {
+			margin: 0;
+			height: 100%;
+			background-color: #f2f2f2;
+		}
+		
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		p {
+			margin: 10px 0;
+		}
+		
+		*[disabled] {
+			opacity: 0.3;
+			cursor: no-drop !important
+		}
+		/* 布局 */
+		
+		.radio_ {
+			display: inline-block;
+			width: 100%;
+			padding: 0 0 0 5px;
+			margin: 0 0 10px 0;
+		}
+		
+		.radio_ .radio {
+			width: 100%;
+			margin: 5px 0;
+			display: inline-flex;
+			cursor: pointer;
+		}
+		
+		.radio[name][value] .input {
+			position: relative;
+			width: 15px;
+			height: 15px;
+			margin: 3px 10px 0 0;
+			background-color: #fff;
+			transform: scale(1);
+			border: 1px solid #444444;
+		}
+		
+		.radio[name][value].active .input:after {
+			content: '';
+			position: absolute;
+			left: 2px;
+			top: 3px;
+			width: 9px;
+			height: 4px;
+			border-left: 2px solid #000;
+			border-bottom: 2px solid #000;
+			transform: rotate(-51deg);
+		}
+		
+		.content {
+			width: 1024px;
+			margin: 0 auto;
+		}
+		
+		.screen {
+			width: 200px;
+			float: left;
+		}
+		
+		.list {
+			float: left;
+			padding: 0 20px;
+			width: calc(100% - 240px);
+		}
+		
+		.list .list_card.active {
+			display: none;
+		}
+		
+		.list .list_card {
+			display: block;
+			float: left;
+			position: relative;
+		}
+		
+		.list .list_card img {
+			width: 80px;
+			height: 80px;
+		}
+		
+		.list .list_card button {
+			position: absolute;
+			bottom: 20px;
+			left: calc(50% - 50px);
+			padding: 10px 20px;
+			min-width: 100px;
+			text-align: center;
+			background-color: #444;
+			color: #fff;
+			border: 0;
+			border-radius: 50px;
+		}
+		
+		.list .list_card:hover button {
+			background-color: #fff;
+			color: #000;
+		}
+		
+		.list .list_card {
+			width: calc(33.333% - 40px);
+			text-align: center;
+			padding: 20px;
+			height: 280px;
+		}
+		
+		.list .list_card:hover {
+			background-color: #333;
+			color: #fff;
+		}
+		
+		.ico {
+			background-color: #d2d2d2;
+			margin: 0 auto 30px auto;
+			width: 85px;
+			height: 85px;
+		}
+		
+		.accordion .tit {
+			cursor: pointer;
+			margin: 0 0 5px 0;
+			padding: 0 0 8px 5px;
+			border-bottom: 1px solid #D2D2D2;
+		}
+		
+		.accordion [formname] {
+			display: none;
+		}
+		
+		.accordion.active [formname] {
+			display: block;
+		}
+	</style>
+
+	<body class="inpit">
+		<div class="content">
+			<div class="screen isclick">
+				<h2>Filters</h2>
+				<div type="inpit/accordion" formname="accordion">
+					<div class="radio_" radio>
+						<div class="accordion" name="accordion" value="0">
+							<div class="tit">
+								Languages
+							</div>
+							<div type="inpit/assembly" formname="radioa">
+								<div class="radio_" radio>
+									<div class="radio" name="radioa" value="javaScript">
+										<div class="input blue"></div>
+										javaScript
+									</div>
+									<div class="radio" name="radioa" value="web">
+										<div class="input blue"></div>
+										web
+									</div>
+									<div class="radio" name="radioa" value="php">
+										<div class="input blue"></div>
+										php
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="accordion" name="accordion" value="1">
+							<div class="tit">
+								Product Type
+							</div>
+							<div type="inpit/assembly" formname="radioa">
+								<div class="radio_" radio>
+									<div class="radio" name="radioa" value="toolbox">
+										<div class="input blue"></div>
+										Tool
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="list">
+				<div style="background-color: #fff;padding: 10px;margin: 10px 0;">
+					基于inpitassembly开发的筛选
+				</div>
+				<div class="list_card" data-type="toolbox">
+					<div class="ico"></div>
+					<div>
+						<h3>Toolbox App</h3>
+						<p>1.0</p>
+						<p>A control panel for your tools and projects</p>
+						<button>下载</button>
+					</div>
+				</div>
+				<div class="list_card" data-type="net,web">
+					<div class="ico"></div>
+					<div>
+						<h3>Rider</h3>
+						<p>2017.2.1</p>
+						<p>Cross-platform .NET IDE</p>
+						<button>下载</button>
+					</div>
+				</div>
+				<div class="list_card" data-type="java">
+					<div class="ico"></div>
+					<div>
+						<h3>IntelliJ IDEA</h3>
+						<p>2017.3</p>
+						<p>The most intelligent Java IDE</p>
+						<button>下载</button>
+					</div>
+				</div>
+				<div class="list_card" data-type="javaScript">
+					<div class="ico"></div>
+					<div>
+						<h3>WebStorm</h3>
+						<p>2017.3</p>
+						<p>The smartest JavaScript IDE</p>
+						<button>下载</button>
+					</div>
+				</div>
+				<div class="list_card" data-type="web,php">
+					<div class="ico"></div>
+					<div>
+						<h3>PhpStorm</h3>
+						<p>2017.3</p>
+						<p>Lightning-smart PHP IDE</p>
+						<button>下载</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="../../js/inpitassembly-2.0.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("[type='inpit/assembly']").inpitassembly({
+					on: function(e, o) {
+						var result = check_result("radioa").data.data;
+						$("[data-type]").each(function() {
+							$(this).addClass("active")
+							for(x of $(this)["0"].attributes["data-type"].value.split(",")) {
+								for(t = 0; t < result.length; t++) {
+									if(x.indexOf(result[t]) >= 0) {
+										$(this).removeClass("active");
+									}
+								}
+							}
+						});
+						if(result.length == 0) {
+							$("[data-type]").removeClass("active");
+						}
+					}
+				});
+				
+				$("[type='inpit/accordion']").inpitassembly({
+					selected_data: [{
+						name: "accordion",
+						data: [0, 1]
+					}]
+				});
+			})
+		</script>
+	</body>
+</html>
